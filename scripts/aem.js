@@ -541,6 +541,9 @@ async function fetchPlaceholders(prefix = 'default') {
 function buildBlock(blockName, content) {
   const table = Array.isArray(content) ? content : [[content]];
   const blockEl = document.createElement('div');
+
+  blockEl.setAttribute('data-mbox-id', blockName);
+  
   // build image block nested div structure
   blockEl.classList.add(blockName);
   table.forEach((row) => {
