@@ -83,20 +83,20 @@ async function loadEager(doc) {
 
   // Retrieve an offer for the homepage hero banner location
   adobe.target.getOffer({
-    "mbox": ”roli-regional-mbox",
+    'mbox': 'roli-regional-mbox',
 
     // Render offer to the #hero-banner selector
-    "success": function(offers) {
+    'success': function(offers) {
       adobe.target.applyOffer({
-      "mbox": "roli-regional-mbox",
-      "selector": “div[data-mbox-id=’hero′]”,
-      "offer": offers
+      'mbox': 'roli-regional-mbox',
+      'selector': 'div[data-mbox-id=’hero′]',
+      'offer': offers
     });
   },
-  "error": {
+   'error': {
     console.log(error);
   },
-  "timeout": 3000
+  'timeout': 3000
 });
 
 
