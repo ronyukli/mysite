@@ -81,6 +81,26 @@ async function loadEager(doc) {
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
 
+  // Retrieve an offer for the homepage hero banner location
+  adobe.target.getOffer({
+    "mbox": ”roli-regional-mbox",
+
+    // Render offer to the #hero-banner selector
+    "success": function(offers) {
+      adobe.target.applyOffer({
+      "mbox": "roli-regional-mbox",
+      "selector": “div[data-mbox-id=’hero′]”,
+      "offer": offers
+    });
+  },
+  "error": {
+    console.log(error);
+  },
+  "timeout": 3000
+});
+
+
+  
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
     if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
