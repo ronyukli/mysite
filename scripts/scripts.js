@@ -93,7 +93,7 @@ async function loadEager(doc) {
       'offer': offers
     });
   },
-   'error': {
+   'error': function(status, error) {
     console.log(error);
   },
   'timeout': 3000
