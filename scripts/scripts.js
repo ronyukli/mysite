@@ -115,7 +115,7 @@ async function loadLazy(doc) {
 
     // Render offer to the #hero-banner selector
     'success': function(offers) {
-      document.querySelector('div[data-mbox-id="hero"]').innerHTML = offers[0].content[0];
+      document.querySelector('div[data-mbox-id="hero"]').innerHTML = offers[0].content;
     },
     'error': function(status, error) {
       console.log(error);
