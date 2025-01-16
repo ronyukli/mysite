@@ -109,21 +109,19 @@ async function loadLazy(doc) {
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
   
-// Retrieve an offer for the homepage hero banner location
+  // Retrieve an offer for the homepage hero banner location
   adobe.target.getOffer({
     'mbox': 'roli-regional-mbox',
 
     // Render offer to the #hero-banner selector
     'success': function(offers) {
-        document.querySelector('div[data-mbox-id="hero"]').innerHTML = offers[0].content[0];
-    });
-  },
-   'error': function(status, error) {
-    console.log(error);
-  },
-  'timeout': 3000
-});
-  
+      document.querySelector('div[data-mbox-id="hero"]').innerHTML = offers[0].content[0];
+    },
+    'error': function(status, error) {
+      console.log(error);
+    },
+    'timeout': 3000
+  });
 }
 
 /**
