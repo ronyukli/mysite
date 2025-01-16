@@ -118,7 +118,7 @@ async function loadLazy(doc) {
       adobe.target.applyOffer({
       'mbox': 'roli-regional-mbox',
       'selector': 'div[data-mbox-id=’hero′]',
-      'offer': offers
+      'offer': offer
     });
   },
    'error': function(status, error) {
