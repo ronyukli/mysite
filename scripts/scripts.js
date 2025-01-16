@@ -115,10 +115,7 @@ async function loadLazy(doc) {
 
     // Render offer to the #hero-banner selector
     'success': function(offers) {
-      adobe.target.applyOffer({
-      'mbox': 'roli-regional-mbox',
-      //"selector": "div[data-mbox-id=’hero′]",
-      'offer': offer
+        document.querySelector('div[data-mbox-id="hero"]').innerHTML = offers[0].content[0];
     });
   },
    'error': function(status, error) {
